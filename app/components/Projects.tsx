@@ -7,6 +7,7 @@ import { Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import { ProjectCard } from './shared/ProjectCard'
 
 const projects = [
   { id: 1, title: 'Project 1', description: 'Description of Project 1', image: '/placeholder.svg' },
@@ -50,11 +51,7 @@ const Projects = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-                <div className="p-4">
-                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300">{project.description}</p>
-                </div>
+                <ProjectCard title={project.title} description={project.description} imageUrl={project.image} />
               </motion.div>
             </SwiperSlide>
           ))}
