@@ -8,6 +8,8 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { ProjectCard } from './shared/ProjectCard'
+import { Typography } from '@mui/material'
+import CustomTypography from './UI/CustomTypography'
 
 const projects = [
   { id: 1, title: 'Project 1', description: 'Description of Project 1', image: '/placeholder.svg' },
@@ -28,7 +30,7 @@ const Projects = () => {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <h2 className="text-3xl font-bold mb-8 text-center">My Projects</h2>
+        <CustomTypography variant='h2' styles={{ marginBottom: "1rem", textAlign: "center" }}>My Projects</CustomTypography>
         <Swiper
           modules={[Navigation, Pagination]}
           spaceBetween={30}
@@ -46,13 +48,7 @@ const Projects = () => {
         >
           {projects.map((project) => (
             <SwiperSlide key={project.id}>
-              <motion.div
-                className="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              >
-                <ProjectCard title={project.title} description={project.description} imageUrl={project.image} />
-              </motion.div>
+              <ProjectCard title={project.title} description={project.description} imageUrl={project.image} />
             </SwiperSlide>
           ))}
         </Swiper>

@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import CustomTypography from '../UI/CustomTypography'
+import { Typography } from '@mui/material'
 
 interface ProjectCardProps {
   title: string
@@ -8,11 +10,11 @@ interface ProjectCardProps {
 
 export function ProjectCard({ title, description, imageUrl }: ProjectCardProps) {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+    <div className="bg-white shadow-md hover:scale-105 transition-all">
       <Image src={imageUrl} alt={title} width={300} height={200} className="w-full h-48 object-cover" />
       <div className="p-4">
-        <h3 className="text-xl font-bold mb-2">{title}</h3>
-        <p className="text-gray-600">{description}</p>
+        <CustomTypography variant='body2' color='#000' styles={{ marginBottom: "0.5rem", fontWeight: "bold" }}>{title}</CustomTypography>
+        <CustomTypography variant='body1' color='#4b5563'>{description}</CustomTypography>
       </div>
     </div>
   )

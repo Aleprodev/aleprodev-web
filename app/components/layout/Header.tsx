@@ -34,7 +34,7 @@ const Header = () => {
             transition={{ delay: 0.2 }}
           >
             <Link href={"#hero"}>
-              <Typography variant='body1'>
+              <Typography variant='body2'>
                 Aleprodev
               </Typography>
             </Link>
@@ -69,7 +69,7 @@ const NavItem = ({ href, children }: { href: string; children: React.ReactNode }
       href={href}
       className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
     >
-      <Typography variant='body1'>
+      <Typography variant='body2'>
         {children}
       </Typography>
     </Link>

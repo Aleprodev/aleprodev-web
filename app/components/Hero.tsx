@@ -1,6 +1,6 @@
 'use client'
 
-import { Box } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import { motion } from 'framer-motion'
 
 const Hero = () => {  
@@ -20,8 +20,8 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Welcome to My Portfolio</h1>
-          <p className="text-xl md:text-2xl mb-8">I'm a passionate developer creating amazing web experiences</p>
+          <Typography variant='h1'>Welcome to My Portfolio</Typography>
+          <Typography variant='body1' sx={{ marginBottom: "2rem"}}>I'm a passionate developer creating amazing web experiences</Typography>
           <motion.a
             href="#projects"
             className="bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors"
