@@ -12,7 +12,7 @@ export default function LayoutComponent({
     <ThemeModeProvider>
         <body>
             <Header />
-            <main className="pt-16">
+            <main>
               {children}
             </main>
         </body>

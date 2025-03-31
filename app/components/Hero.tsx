@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Typography } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 import { motion } from 'framer-motion'
 
 const Hero = () => {  
@@ -22,14 +22,12 @@ const Hero = () => {
         >
           <Typography variant='h1'>Welcome to My Portfolio</Typography>
           <Typography variant='body1' sx={{ marginBottom: "2rem"}}>I'm a passionate developer creating amazing web experiences</Typography>
-          <motion.a
-            href="#projects"
-            className="bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <Button
+          variant='contained'
+            className="px-6 py-3 rounded-full text-lg font-semibold hover:scale-105 active:scale-95 transition-all"
           >
             View My Work
-          </motion.a>
+          </Button>
         </motion.div>
       </Box>
     </section>

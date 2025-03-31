@@ -67,9 +67,8 @@ const NavItem = ({ href, children }: { href: string; children: React.ReactNode }
   <li>
     <Link
       href={href}
-      className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
     >
-      <Typography variant='body2'>
+      <Typography variant='body2' className='hover:text-blue-400 transition-colors'>
         {children}
       </Typography>
     </Link>
