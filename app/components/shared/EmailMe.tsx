@@ -6,7 +6,7 @@ import TextArea from "@/components/shared/TextArea";
 import EmailMeSuccess from "@/components/shared/EmailMeSuccess";
 import animation from "@/assets/lottie/email.json";
 import Lottie from "lottie-react";
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 import { Typography } from "@mui/material";
 import { useThemeMode } from "../ThemeModeProvider";
 import Section from "./Section";
@@ -39,25 +39,25 @@ export default function EmailMe() {
       template_params,
     };
 
-    try {
-      await axios.post("https://api.emailjs.com/api/v1.0/email/send", data);
+    // try {
+    //   await axios.post("https://api.emailjs.com/api/v1.0/email/send", data);
 
-      if (typeof window !== "undefined") {
-        const targetElement = document.getElementById("emailus");
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 200,
-            behavior: "smooth",
-          });
-        }
-      }
-      setName("");
-      setEmail("");
-      setMessage("");
-      setShowFeedback(true);
-    } catch (error) {
-      console.error(error);
-    }
+    //   if (typeof window !== "undefined") {
+    //     const targetElement = document.getElementById("emailus");
+    //     if (targetElement) {
+    //       window.scrollTo({
+    //         top: targetElement.offsetTop - 200,
+    //         behavior: "smooth",
+    //       });
+    //     }
+    //   }
+    //   setName("");
+    //   setEmail("");
+    //   setMessage("");
+    //   setShowFeedback(true);
+    // } catch (error) {
+    //   console.error(error);
+    // }
   };
 
   return (
@@ -66,9 +66,7 @@ export default function EmailMe() {
         <div className="p-4 md:p-0 place-content-center grid grid-cols-1 md:grid-cols-2 md:gap-4">
           <div className="w-full flex flex-col justify-center">
             <div className="flex items-center gap-4 mb-4">
-              <Typography variant="h2">
-                Let's get in touch
-              </Typography>
+              <Typography variant="h2">Let's get in touch</Typography>
             </div>
 
             <form
