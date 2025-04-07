@@ -1,6 +1,11 @@
+"use client"
+import { useThemeMode } from "../ThemeModeProvider";
+
 const Footer = () => {
+  const { mode } = useThemeMode();
+
   return (
-    <footer className="bg-gray-800 text-white py-8">
+    <footer className={`py-8 ${mode === 'light' ? 'bg-gray-100' : 'bg-gray-900'} transition-all`}>
       <div className="container mx-auto px-4 text-center">
         <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
         <div className="mt-4">
