@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "build": "next build",
+    "export": "next build",
+    "deploy": "next build && gh-pages -d out"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -23,6 +24,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-scroll": "^1.9.3",
+    "sharp": "^0.34.0",
     "swiper": "^11.2.0"
   },
   "devDependencies": {
@@ -39,5 +41,4 @@
     "typescript": "^5"
   },
   "homepage": "https://tu-usuario.github.io/aleprodev-web"
-
 }
