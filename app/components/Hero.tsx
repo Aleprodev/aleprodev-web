@@ -1,25 +1,13 @@
 'use client'
 
-import { Box, Button, Typography } from '@mui/material'
-import { motion } from 'framer-motion'
+import { Button, Typography } from '@mui/material'
+import Section from './shared/Section'
+import { useThemeMode } from './ThemeModeProvider'
 
-const Hero = () => {  
+const Hero = () => {
+  const { mode } = useThemeMode();
   return (
-    <section id='hero'>
-      <Box
-        className="min-h-screen flex items-center justify-center"
-        sx={(theme) => ({
-          backgroundColor: theme.palette.mode === "light"
-            ? theme.palette.background.paper
-            : "#4c1d95",
-        })}
-      >
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
+      <Section gradient={mode} type={0} id='hero'>
           <Typography variant='h1'>Welcome to My Portfolio</Typography>
           <Typography variant='body1' sx={{ marginBottom: "2rem"}}>I'm a passionate developer creating amazing web experiences</Typography>
           <Button
@@ -28,9 +16,7 @@ const Hero = () => {
           >
             View My Work
           </Button>
-        </motion.div>
-      </Box>
-    </section>
+      </Section>
   )
 }
 

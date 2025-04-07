@@ -2,15 +2,22 @@ import React, { createContext, useContext, useState, useMemo } from "react";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import { darkTheme, lightTheme } from "@/theme";
 
-const ThemeModeContext = createContext({
+type ThemeMode = "light" | "dark";
+
+interface ThemeModeContextType {
+  toggleTheme: () => void;
+  mode: ThemeMode;
+}
+
+const ThemeModeContext = createContext<ThemeModeContextType>({
   toggleTheme: () => {},
-  mode: "light",
+  mode: "dark",
 });
 
 export const useThemeMode = () => useContext(ThemeModeContext);
 
 export const ThemeModeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [mode, setMode] = useState<"light" | "dark">("light");
+  const [mode, setMode] = useState<"light" | "dark">("dark");
 
   const toggleTheme = () => {
     setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));

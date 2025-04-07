@@ -6,6 +6,7 @@ import { Moon, Sun } from 'lucide-react'
 import Link from 'next/link'
 import { Box, Button, Typography } from '@mui/material'
 import { useThemeMode } from '../ThemeModeProvider'
+import { scrollToId } from '@/utils/scrollToId'
 
 const Header = () => {
   const [mounted, setMounted] = useState(false)
@@ -33,7 +34,7 @@ const Header = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <Link href={"#hero"}>
+            <Link href={"#hero"} onClick={() => scrollToId("hero")}>
               <Typography variant='body2'>
                 Aleprodev
               </Typography>
@@ -67,6 +68,7 @@ const NavItem = ({ href, children }: { href: string; children: React.ReactNode }
   <li>
     <Link
       href={href}
+      onClick={() => scrollToId(href.slice(1))}
     >
       <Typography variant='body2' className='hover:text-blue-400 transition-colors'>
         {children}

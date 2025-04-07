@@ -57,7 +57,7 @@ const lightTheme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          transition: "all 0.3s ease", // Transición global
+          transition: "all 0.3s ease",
         },
       },
     },
@@ -78,6 +78,15 @@ const darkTheme = createTheme({
     background: {
       default: "#111827",
       paper: "#1f1f1f",
+    },
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          transition: "all 0.3s ease",
+        },
+      },
     },
   },
 });

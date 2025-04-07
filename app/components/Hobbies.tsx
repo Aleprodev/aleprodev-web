@@ -1,10 +1,11 @@
 'use client'
 
-import { useRef, useState } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { useThemeMode } from './ThemeModeProvider'
 import reactImg from '@/assets/images/React.png'
 import { Typography } from '@mui/material'
+import Section from './shared/Section'
 
 const hobbies = [
   { id: 1, name: 'Photography', image: reactImg.src },
@@ -16,25 +17,16 @@ const hobbies = [
 
 const Hobbies = () => {
   const { mode } = useThemeMode();
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
 
   return (
-    <section id="hobbies" className={`py-20 ${mode === 'light' ? 'bg-gray-100' : 'bg-gray-900'} transition-all`} ref={ref}>
-      <motion.div
-        className="container mx-auto px-4"
-        initial={{ opacity: 0, y: 50 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        <Typography variant='h2' className="font-bold mb-8 text-center">My Hobbies</Typography>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {hobbies.map((hobby) => (
-            <HobbyCard key={hobby.id} name={hobby.name} image={hobby.image} mode={mode} />
-          ))}
-        </div>
-      </motion.div>
-    </section>
+      <Section gradient={mode} type={2} id="hobbies">
+          <Typography variant='h2' className="font-bold mb-8 text-center">My Hobbies</Typography>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {hobbies.map((hobby) => (
+              <HobbyCard key={hobby.id} name={hobby.name} image={hobby.image} mode={mode} />
+            ))}
+          </div>
+      </Section>
   )
 }
 
