@@ -6,8 +6,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // necesario para export estático
   },
-  basePath: "/aleprodev-web",
-  assetPrefix: "/aleprodev-web/",
 };
 
 export default nextConfig;
