@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import axios from "axios";
 import Input from "@/components/shared/Input";
 import TextArea from "@/components/shared/TextArea";
 import EmailMeSuccess from "@/components/shared/EmailMeSuccess";
@@ -18,48 +17,6 @@ export default function EmailMe() {
   const [message, setMessage] = useState("");
   const [showFeedback, setShowFeedback] = useState(false);
 
-  const handleSubmit = async (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-
-    const serviceId = "service_uhq4y6q";
-    const templateId = "template_3frrdnp";
-    const publicKey = "H-9WirW9f8Z6TnjA7";
-
-    const template_params = {
-      from_name: name,
-      from_email: email,
-      to_name: "Innova code",
-      message,
-    };
-
-    const data = {
-      service_id: serviceId,
-      template_id: templateId,
-      user_id: publicKey,
-      template_params,
-    };
-
-    // try {
-    //   await axios.post("https://api.emailjs.com/api/v1.0/email/send", data);
-
-    //   if (typeof window !== "undefined") {
-    //     const targetElement = document.getElementById("emailus");
-    //     if (targetElement) {
-    //       window.scrollTo({
-    //         top: targetElement.offsetTop - 200,
-    //         behavior: "smooth",
-    //       });
-    //     }
-    //   }
-    //   setName("");
-    //   setEmail("");
-    //   setMessage("");
-    //   setShowFeedback(true);
-    // } catch (error) {
-    //   console.error(error);
-    // }
-  };
-
   return (
     <div className="relative">
       <Section gradient={mode} type={1} id="contact">
@@ -69,11 +26,7 @@ export default function EmailMe() {
               <Typography variant="h2">Let's get in touch</Typography>
             </div>
 
-            <form
-              className="contact-form me-lg-5 pe-lg-3"
-              role="form"
-              onSubmit={handleSubmit}
-            >
+            <form className="contact-form me-lg-5 pe-lg-3" role="form">
               <div className="form-floating flex flex-col">
                 <Input
                   type="text"

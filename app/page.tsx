@@ -11,7 +11,7 @@ export default function Home() {
       <Hero />
       <Projects />
       <Hobbies />
-      {/* <EmailMe /> */}
+      <EmailMe />
       <Footer />
     </>
   );
